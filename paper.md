@@ -136,14 +136,11 @@ Grafana – инструмент для визуализации метрик и
 В качестве аналитических метрик были выбраны:   
   * Посещаемость магазина. В качестве метрики коэффициент посещаемости: ![equation](https://latex.codecogs.com/svg.latex?k_{pos}=\frac{N_{pos}}{t}), где 
   ![equation](https://latex.codecogs.com/svg.latex?N_{pos}) - количество обращений к сайту за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга. Для своевременного обнаружения изменений посещаемости магазина настройка оповещений:
-  ![equation](https://latex.codecogs.com/svg.latex?alert(\frac{k_{pos}}{avg(k_n)}<P)), где ![equation](https://latex.codecogs.com/svg.latex?k_n) - коэффициент посещаемости за определенный выбранный промежуток времени, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение
-  * Динамика продаж. В качестве метрики коэффициент продаж: ![equation](https://latex.codecogs.com/svg.latex?k_{pr}=\frac{N_{pr}}{t}), где ![equation](https://latex.codecogs.com/svg.latex?N_{pr}) - количество обращений к сайту за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга.   
-  * Процент отказов от покупок
-alert_if(NоткN>0.1), где Nотк – количество отказов, N – общее количество продаж за время t
-  * Динамика отложенной, но не купленной продукции
-alert_if(avgNоNо+Nк>0.1) , где Nо – количество отложенных товаров у конкретного пользователя, Nк – количество купленных товаров у конкретного пользователя
-  * Средний чек покупки
-avg(sum(p)), где p – стоимость продукта в чеке
+  ![equation](https://latex.codecogs.com/svg.latex?alert(\frac{k_{pos}}{avg(k_{posn})}<P)), где ![equation](https://latex.codecogs.com/svg.latex?k_{posn}) - коэффициент посещаемости за определенный выбранный промежуток времени, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение.
+  * Динамика продаж. В качестве метрики коэффициент продаж: ![equation](https://latex.codecogs.com/svg.latex?k_{pr}=\frac{N_{pr}}{t}), где ![equation](https://latex.codecogs.com/svg.latex?N_{pr}) - количество обращений к сайту за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга. Для своевременного обнаружения изменений динамики продаж  интернет-магазина настройка оповещений:
+  ![equation](https://latex.codecogs.com/svg.latex?alert(\frac{k_{pr}}{avg(k_{prn})}<P)), где ![equation](https://latex.codecogs.com/svg.latex?k_{prn}) - коэффициент посещаемости за определенный выбранный промежуток времени, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение.   
+  * Процент отказов от покупок. Для своевременного обнаружения изменения процента отказов от заказов настройка оповещений: ![equation](https://latex.codecogs.com/svg.latex?alert(\frac{N_{ot}}{N}>P)), где ![equation](https://latex.codecogs.com/svg.latex?N_{ot}) - количество отказов от заказов, ![equation](https://latex.codecogs.com/svg.latex?N) - общее число заказов за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение.
+  * Средний чек покупки. Данный параметр необходим для наблюдения динамики интернет-магазина. В качестве метрики: ![equation](https://latex.codecogs.com/svg.latex?avg(sum(c))), где ![equation](https://latex.codecogs.com/svg.latex?c) - стоимость товара в чеке.
   * Популярность товара
 count(P)avg(countPобщ)– , где P - количество покупок данного товара, Pобщ – количество всех покупок 
   * Остаток товара 
