@@ -141,26 +141,23 @@ Grafana – инструмент для визуализации метрик и
   ![equation](https://latex.codecogs.com/svg.latex?alert(\frac{k_{pr}}{avg(k_{prn})}<P)), где ![equation](https://latex.codecogs.com/svg.latex?k_{prn}) - коэффициент посещаемости за определенный выбранный промежуток времени, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение.   
   * Процент отказов от покупок. Для своевременного обнаружения изменения процента отказов от заказов настройка оповещений: ![equation](https://latex.codecogs.com/svg.latex?alert(\frac{N_{ot}}{N}>P)), где ![equation](https://latex.codecogs.com/svg.latex?N_{ot}) - количество отказов от заказов, ![equation](https://latex.codecogs.com/svg.latex?N) - общее число заказов за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение.
   * Средний чек покупки. Данный параметр необходим для наблюдения динамики интернет-магазина. В качестве метрики: ![equation](https://latex.codecogs.com/svg.latex?avg(sum(c))), где ![equation](https://latex.codecogs.com/svg.latex?c) - стоимость товара в чеке.
-  * Популярность товара
-count(P)avg(countPобщ)– , где P - количество покупок данного товара, Pобщ – количество всех покупок 
-  * Остаток товара 
-count(H) , где H – остаток товара на складе
-алерт?
-  * Время заказов
-avg(tд-tз), где tд – время доставки, tз – время заказа
+  * Популярность товара. В качестве метрики: ![equation](https://latex.codecogs.com/svg.latex?\frac{count(P)}{avg(count(P_o))}), где ![equation](https://latex.codecogs.com/svg.latex?P) - количество покупок определенного товара, ![equation](https://latex.codecogs.com/svg.latex?P_o) - общее число покупок за время
+count(P)avg(countPобщ)– , где P - количество покупок данного товара, Pобщ – количество всех покупок за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга.  
   
-Таким образом предложенная схема для взаимодествия с интернет-магазинами:
-metrics {
-  service {
-    id
-    name
-    datetime
-    analitics {
-      attendance {
-        url
-        count
-        time
-      }
+Таким образом, предложенная схема для взаимодествия с интернет-магазинами:  
+
+```
+metrics {  
+  service {  
+    id  
+    name 
+    datetime  
+    analitics {  
+      attendance {  
+        url  
+        count  
+        time 
+      } 
       dynemic{
         sale {
           products_list
@@ -231,8 +228,8 @@ metrics {
       mem_percent
     }
   }
-}
-
+} 
+```
 
 ## Заключение   
 
