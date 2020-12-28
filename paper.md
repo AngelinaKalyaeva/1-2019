@@ -164,26 +164,12 @@ metrics {
           count
           time
         }
-        delay {
-          user_id
-          products_list
-          count
-          time
-      }
       product {
         id
         popularity {
           time
           sales_count
         }
-        balance {
-          count
-        }
-      }
-      delivery {
-        id  
-        order_time
-        delivery_time
       }
     }
     efficiency {
