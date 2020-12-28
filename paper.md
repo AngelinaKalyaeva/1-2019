@@ -136,7 +136,7 @@ Grafana – инструмент для визуализации метрик и
 В качестве аналитических метрик были выбраны:   
   * Посещаемость магазина. В качестве метрики коэффициент посещаемости: ![equation](https://latex.codecogs.com/svg.latex?k_{pos}=\frac{N_{pos}}{t}), где 
   ![equation](https://latex.codecogs.com/svg.latex?N_{pos}) - количество обращений к сайту за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга. Для своевременного обнаружения изменений посещаемости магазина настройка оповещений:
-  ![equation](https://latex.codecogs.com/svg.latex?alert{\_}if(\frac{k_{pos}}{avg(k_n)}<P)), где ![equation](https://latex.codecogs.com/svg.latex?k_n) - коэффициент посещаемости за определенный выбранный промежуток времени, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение
+  ![equation](https://latex.codecogs.com/svg.latex?alert(\frac{k_{pos}}{avg(k_n)}<P)), где ![equation](https://latex.codecogs.com/svg.latex?k_n) - коэффициент посещаемости за определенный выбранный промежуток времени, ![equation](https://latex.codecogs.com/svg.latex?P) - настраиваемый процент, с которым производится сравнение
   * Динамика продаж. В качестве метрики коэффициент продаж: ![equation](https://latex.codecogs.com/svg.latex?k_{pr}=\frac{N_{pr}}{t}), где ![equation](https://latex.codecogs.com/svg.latex?N_{pr}) - количество обращений к сайту за время ![equation](https://latex.codecogs.com/svg.latex?t), кторое может быть настроено пользователем системы мониторинга.   
   * Процент отказов от покупок
 alert_if(NоткN>0.1), где Nотк – количество отказов, N – общее количество продаж за время t
